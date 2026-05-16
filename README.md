@@ -1,6 +1,5 @@
 # SNAS CODE: Systemic Neural Agentic Solutions
 
-![SNAS CODE Architecture](assets/snas_code_architecture_viz.png)
 
 ## Overview
 
