@@ -9,9 +9,9 @@ from rich.text import Text
 from rich.syntax import Syntax
 from rich.rule import Rule
 
-from config import BRAIN_MODEL, WORKER_MODEL, BRAIN_SYSTEM_PROMPT, WORKER_SYSTEM_PROMPT
-from utils import console, _scrub_hallucinated_json, _parse_response, _try_fallback_parse, _DictToObj
-from tools import tools, map_tool_call
+from .config import BRAIN_MODEL, WORKER_MODEL, BRAIN_SYSTEM_PROMPT, WORKER_SYSTEM_PROMPT
+from .utils import console, _scrub_hallucinated_json, _parse_response, _try_fallback_parse, _DictToObj
+from .tools import tools, map_tool_call
 
 class WorkerAgent:
     def __init__(self):
@@ -89,7 +89,7 @@ class WorkerAgent:
             
             # Fallback for models that output JSON in content instead of tool_calls
             if not msg_dict.get("tool_calls") and msg_dict.get("content"):
-                from utils import _try_fallback_parse
+                from .utils import _try_fallback_parse
                 _try_fallback_parse(msg_dict)
             
             task_history.append(msg_dict)
@@ -137,7 +137,7 @@ class WorkerAgent:
 
 class SansAgent: # This is now the Orchestrator
     def __init__(self):
-        from utils import get_available_models
+        from .utils import get_available_models
         self.client = Client()
         models_str = get_available_models()
         self.model = BRAIN_MODEL

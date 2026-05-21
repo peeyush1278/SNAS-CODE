@@ -1,4 +1,4 @@
-from utils import auto_select_models
+from .utils import auto_select_models
 
 # Auto-detect models if not manually overridden
 # To manually override, set them to strings instead of calling auto_select_models()

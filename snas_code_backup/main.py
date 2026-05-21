@@ -16,10 +16,10 @@ from rich.table import Table
 from rich.align import Align
 from rich.live import Live
 
-from config import MODEL_NAME
-from utils import console
-from tools import tools
-from agent import SansAgent
+from .config import MODEL_NAME
+from .utils import console
+from .tools import tools
+from .agent import SansAgent
 
 def main():
     # Creative Edition Palette: Vibrant Peach (#FF8F70), Deep Charcoal, Soft White
@@ -36,7 +36,7 @@ def main():
         is_interactive = False
         console.print("[dim]No interactive console detected.[/dim]")
 
-    from config import BRAIN_MODEL
+    from .config import BRAIN_MODEL
     console.print()
     
     # Large Creative ASCII Banner

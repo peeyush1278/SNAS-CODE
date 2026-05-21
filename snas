@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+export PYTHONPATH="$(dirname "$0"):$PYTHONPATH"
+python3 -m snas_code.main "$@"

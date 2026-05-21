@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+snas_code/__init__.py
+snas_code/agent.py
+snas_code/config.py
+snas_code/main.py
+snas_code/tools.py
+snas_code/utils.py
+snas_code/web_tools.py
+snas_code.egg-info/PKG-INFO
+snas_code.egg-info/SOURCES.txt
+snas_code.egg-info/dependency_links.txt
+snas_code.egg-info/entry_points.txt
+snas_code.egg-info/requires.txt
+snas_code.egg-info/top_level.txt
