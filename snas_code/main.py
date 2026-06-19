@@ -106,6 +106,9 @@ def handle_slash_command(user_input: str, agent: SansAgent, session: PromptSessi
                 
     elif cmd == "/history":
         try:
+            if session is None:
+                console.print("[dim]Command history is not available in non-interactive mode.[/dim]")
+                return True
             history_strings = list(session.history.load_history_strings())
             if not history_strings:
                 console.print("[dim]Command history is empty.[/dim]")
@@ -144,6 +147,7 @@ def main():
     # Establish persistent history
     history_file = os.path.expanduser("~/.snas_code_history")
     
+    session = None
     try:
         session = PromptSession(style=style, history=FileHistory(history_file), completer=SansCompleter())
         is_interactive = True

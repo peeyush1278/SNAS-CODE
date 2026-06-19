@@ -220,7 +220,7 @@ def auto_select_models():
             worker = env_worker
         elif len(all_models) > 1:
             # Pick a smaller model for worker if possible
-            worker_candidates = [m['name'] for m in all_models if any(x in m['name'].lower() for x in ['mini', 'small', 'tiny', '3b', '1b', 'phi'])]
+            worker_candidates = [m['name'] for m in all_models if any(x in m['name'].lower() for x in ['mini', 'small', 'tiny', '3b', '1b', 'phi', 'llama', 'jarvis'])]
             if worker_candidates and worker_candidates[0] != brain:
                 worker = worker_candidates[0]
             else:
